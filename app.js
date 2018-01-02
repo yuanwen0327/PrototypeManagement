@@ -11,7 +11,7 @@ var routes       = require('./routes/index');
 var users        = require('./routes/users');
 var pr           = require('./routes/pr');
 
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+mongoose.connect('mongodb://127.0.0.1:27017/pm2');
 
 var app = express();
 
