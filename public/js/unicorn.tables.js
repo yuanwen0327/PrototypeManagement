@@ -167,7 +167,7 @@ $(document).ready(function () {
       }
     })
   })
-  $('.jq-list-del').click(function (e) {
+  $('#DataTables_Table_0').on('click','.jq-list-del',function(){
     console.log($(this).data('id'))
     if (confirm('是否删除?')) {
       $.post('/users/deleteList', {
@@ -181,7 +181,7 @@ $(document).ready(function () {
       })
     }
   })
-  $('.jq-list-rename').click(function () {
+  $('#DataTables_Table_0').on('click','.jq-list-rename',function(){
     window.$$renameListId = $(this).data('id')
     $('#rename-list').modal('show')
   })
