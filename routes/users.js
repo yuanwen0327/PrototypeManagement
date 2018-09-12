@@ -99,6 +99,76 @@ router.post('/editList', function (req, res, next) {
     })
   }
 });
+// 删除产品
+router.post('/deleteList', function (req, res, next) {
+  /* 包含新增 */
+  var name = req.cookies.name;
+  var connectid = req.cookies['connect.id'];
+  var singename = req.cookies['name_sig'];
+  console.log(req.body)
+  if (name != undefined) {
+    if (rule.pw(name, connectid, singename)) {
+      listmodel.findByIdAndRemove(req.body.id, function (err) {
+        if (err) {
+          console.log("Error:" + err);
+        } else {
+          productmodel.remove({
+            'info.id':req.body.id
+          },function(err){
+            console.log(err)
+            res.send({
+              status: 1,
+              info: '删除成功'
+            });
+          })
+        }
+      })
+    } else {
+      res.redirect('/login')
+    }
+  } else {
+    res.send({
+      status: 0,
+      info: '请登录'
+    })
+  }
+});
+//重命名产品
+router.post('/renameList', function (req, res, next) {
+  /* 包含新增 */
+  var name = req.cookies.name;
+  var connectid = req.cookies['connect.id'];
+  var singename = req.cookies['name_sig'];
+  console.log(req.body)
+  if (name != undefined) {
+    if (rule.pw(name, connectid, singename)) {
+      listmodel.findByIdAndUpdate(req.body.id,{name:req.body.name}, function (err) {
+        if (err) {
+          console.log("Error:" + err);
+        } else {
+          productmodel.update({
+            'info.id':req.body.id
+          },{
+            'info.name':req.body.name
+          },function(err){
+            console.log(err)
+            res.send({
+              status: 1,
+              info: '重命名成功'
+            });
+          })
+        }
+      })
+    } else {
+      res.redirect('/login')
+    }
+  } else {
+    res.send({
+      status: 0,
+      info: '请登录'
+    })
+  }
+});
 router.post('/editProduct', function (req, res, next) {
   /* 包含新增 */
   var name = req.cookies.name;

@@ -78,7 +78,9 @@ html(lang='zh')
                       tr
                         td.jq-list-name(data-id="#{item._id}") #{item.name}
                         td.text-center
-                          a(href="?i=#{item._id}&n=#{item.name}",data-id="#{item._id}") 我的原型
+                          a(href="?i=#{item._id}&n=#{item.name}",data-id="#{item._id}") 查看
+                          a.jq-list-rename(href='javascript:;',data-id="#{item._id}") 重命名
+                          a.jq-list-del(href="javascript:;",data-id="#{item._id}") 删除
           .col-xs-9
             .widget-box
               .widget-title
@@ -124,6 +126,26 @@ html(lang='zh')
                             a(href="/pr?pr=#{item.info.id}",target="_blank") 查看
                           else
                             a(href="/pr?pr=#{item.info.id}",target="_blank") 查看
+      div#rename-list.modal.fade
+        div.modal-dialog
+          div.modal-content
+            div.modal-header
+              button.close(data-dismiss="modal",type="button") ×
+              h3 修改产品名
+            div.modal-body
+              .row.nopadding
+                .col-xs-12.nopadding
+                  .widget-box(style="margin:0")
+                    .widget-content.nopadding
+                      form.form-horizontal
+                        .form-group
+                          label.col-sm-3.col-md-3.col-lg-2.control-label 产品名称
+                          .col-sm-9.col-md-9.col-lg-10
+                            input.form-control.input-sm.spinner(type='text',placeholder='请输入新的产品名称（不大于20个字）',name='listRename')
+            div.modal-footer
+              a.btn.btn-primary.btn-small.jq-submit-rename-list(href="javascript:;") 提交
+              a.btn.btn-default.btn-small(data-dismiss="modal",href="#") 取消
+
       div#add-list.modal.fade
         div.modal-dialog
           div.modal-content
