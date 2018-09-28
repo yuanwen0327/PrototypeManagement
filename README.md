@@ -1,45 +1,44 @@
 # 产品原型(HTML)管理工具
 
-一个产品原型(HTML)管理工具基于nodejs&amp;mongodb&amp;redis
+一个产品原型(HTML)管理工具基于nodejs&mongodb&redis，
+支持axure 和 墨刀原型。
 
-[![npm version](https://badge.fury.io/js/engine.io.svg)](http://badge.fury.io/js/engine.io)
-[![Build Status](https://travis-ci.org/chinakids/PrototypeManagement.svg?branch=master)](https://travis-ci.org/chinakids/PrototypeManagement)
-[![Join the chat at https://gitter.im/chinakids/PrototypeManagement](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/chinakids/PrototypeManagement?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-###1.安装
 
-#####1.1 环境配置
+### 安装
 
--  *、基础环境：node、git、brew(其他平台请参照其他包管理工具)、ruby(brew依赖)
+#### 环境配置
 
--  1、安装redis并启动服务  :   `brew install redis`  &   `redis-server`
+基础环境：node、git、brew(其他平台请参照其他包管理工具)、ruby(brew依赖)
 
--  2、安装mongodb并启动服务:   `brew install mongodb`   &   `mongod --config /home/mongodb/conf/mongod.conf`(配置文件每个人路径可能不同)
+1. 安装redis并启动服务
 
--  3、安装7z并添加到环境变量: 
+2. 安装mongodb并启动服务
+
+3. 安装7z并添加到环境变量: 
     > On Linux - https://sourceforge.net/projects/p7zip
     > On Windows - http://www.7-zip.org/download.html
     > On Mac OSX - http://rudix.org/packages/p7zip.html
       
 
-#####1.2 加载启动
+#### 加载启动
 
-- 1、 `git clone https://github.com/chinakids/PrototypeManagement.git`
+1. `git clone https://github.com/yuanwen0327/PrototypeManagement.git`
 
-- 2、 `npm install`
+2. `npm install`
 
-- 3、 `node app`
+3. `node app`
 
 
-###2.备注
+### 备注
 
--   1.可能需要修改mongodb连接地址，请在app.js中修改
+1. 可能需要修改mongodb连接地址，请在app.js中修改
 
--   2.数据库字段配置请参照schemas目录文件
+2. 数据库字段配置请参照schemas目录文件
 
--   3.上传工具使用的webuploader(fex团队出品，Ps.希望官方文档能写的好一点...看着心累)
+3. 上传工具使用的webuploader(fex团队出品，Ps.希望官方文档能写的好一点...看着心累)
 
-###3.涉及技能
+### 涉及技能
 
 - jade
 - node
@@ -49,21 +48,16 @@
 - mongodb
 - redis
 
-###4.缺陷
+### 缺陷
 
 - 未做录入表单数据格式验证
 - 后台流程未整理
-- ~~添加产品第二次会重复录入~~(new form位置的问题)
-- ~~window下压缩文件在unix环境下解压乱码~~(通过外挂python解压的方式解决)
 - 其他未知问题
 
-###5.PR说明
+### PR说明
 - 欢迎各种PR
 - 提交代码一定要说清楚修改哦~
 
-###6.下阶段开发计划
+### 下阶段开发计划
 - 等待补充
 
-###7.更新说明
-##### V1.1.0(2015-06-23)
-- 第一版可用版本发布
