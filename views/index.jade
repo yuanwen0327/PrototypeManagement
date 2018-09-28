@@ -87,11 +87,12 @@ html(lang='zh')
                             span.badge(title="最后修改:\n#{item.meta.updateAt}") 未知
                         td #{item.author}
                         td.text-center
-                          a(href="/pr?pr=#{item.info.id}",target="_blank") 查看
+                          a(href="/pr?pr=#{item._id}",target="_blank") 查看
       .row
         #footer.col-xs-12
           | 2012 - 2013 &copy; Unicorn Admin. Brought to you by
-          a(href='http://github.com/chinakids')  chinakids
+          a(href='http://github.com/chinakids')  chinakids.
+          | mod by yuanwen
     script(src='/lib/jquery/dist/jquery.min.js')
     script(src='/lib/bootstrap/dist/js/bootstrap.min.js')
     script(src='/js/jquery-ui.custom.js')

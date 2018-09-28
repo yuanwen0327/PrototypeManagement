@@ -123,9 +123,9 @@ html(lang='zh')
                           if item.status != 3
                             a.jq-edit-status(href="#edit-status",data-toggle="modal",target="_blank",data-id="#{item._id}",data-status="#{item.status}") 修改状态
                             | &nbsp;&nbsp;|&nbsp;&nbsp;
-                            a(href="/pr?pr=#{item.info.id}",target="_blank") 查看
+                            a(href="/pr?pr=#{item._id}",target="_blank") 查看
                           else
-                            a(href="/pr?pr=#{item.info.id}",target="_blank") 查看
+                            a(href="/pr?pr=#{item._id}",target="_blank") 查看
       div#rename-list.modal.fade
         div.modal-dialog
           div.modal-content

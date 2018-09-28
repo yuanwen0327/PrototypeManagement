@@ -188,27 +188,27 @@ router.post('/editProduct', function (req, res, next) {
         var output = path.join(__dirname, '../public/web/', path.basename(files.file.path), '/');
         cmd.unzip(input, output);
 
-        if (fields.status == 1 || fields.status == 2) {
+        // if (fields.status == 1 || fields.status == 2) {
           //新增项目非关闭状态则关闭之前所有PR再添加
-          productmodel.findByListId(fields.infoId, function (err, product) {
-            if (err) {
-              console.log(err)
-            } else {
-              var s = {
-                status: 3
-              };
-              for (var key in product) {
-                _product = _.extend(product[key], s);
-                _product.save(function (err, user) {
-                  if (err) {
-                    console.log(err);
-                  }
-                  console.log('修改成功')
-                })
-              }
-            }
-          })
-        }
+          // productmodel.findByListId(fields.infoId, function (err, product) {
+          //   if (err) {
+          //     console.log(err)
+          //   } else {
+          //     var s = {
+          //       status: 3
+          //     };
+          //     for (var key in product) {
+          //       _product = _.extend(product[key], s);
+          //       _product.save(function (err, user) {
+          //         if (err) {
+          //           console.log(err);
+          //         }
+          //         console.log('修改成功')
+          //       })
+          //     }
+          //   }
+          // })
+        // }
         //关闭状态就如实添加
         var entryHtml = files.file.name.indexOf('.8.zip') != -1 ? '/start.html' : '/index.html'
         _product = new productmodel({
