@@ -1,9 +1,4 @@
-# [此项目已被废弃]产品原型(HTML)管理工具 v1.1.0
-
-> 废弃声明：
-> 因本项目存在致命的架构设计 bug，加上本人精力有限，废弃此产品
-> 后期是否会有新的重构版本暂不确定
-> 2015-08-04日起此项目被废弃
+# 产品原型(HTML)管理工具
 
 一个产品原型(HTML)管理工具基于nodejs&amp;mongodb&amp;redis
 
@@ -13,13 +8,19 @@
 
 ###1.安装
 
-#####1.1 环境配置（mac为例）
+#####1.1 环境配置
 
 -  *、基础环境：node、git、brew(其他平台请参照其他包管理工具)、ruby(brew依赖)
 
 -  1、安装redis并启动服务  :   `brew install redis`  &   `redis-server`
 
 -  2、安装mongodb并启动服务:   `brew install mongodb`   &   `mongod --config /home/mongodb/conf/mongod.conf`(配置文件每个人路径可能不同)
+
+-  3、安装7z并添加到环境变量: 
+    > On Linux - https://sourceforge.net/projects/p7zip
+    > On Windows - http://www.7-zip.org/download.html
+    > On Mac OSX - http://rudix.org/packages/p7zip.html
+      
 
 #####1.2 加载启动
 
