@@ -1,5 +1,4 @@
 var exec = require('child_process').exec;
-var path = require('path');
 
 var cmd = {
   exec : function(cmdStr){
@@ -11,10 +10,6 @@ var cmd = {
             console.log('解压成功')
         }
     });
-  },
-  unzip : function(input,output){
-    var cmdStr = 'python '+path.join(__dirname, '../tools/unzip.py')+' '+input+' '+output;
-    this.exec(cmdStr);
   }
 }
 
