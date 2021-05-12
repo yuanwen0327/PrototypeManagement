@@ -14,7 +14,7 @@ var productmodel = require("../models/products");
 var listmodel = require("../models/list");
 var Zip = require("node-7z");
 var getHtmlPath = require('../tools/get-html-path')
-// var cmd = require('../tools/cmd');
+var cmd = require('../tools/cmd');
 
 /* 用户模块 */
 router.get("/", function (req, res, next) {
@@ -195,10 +195,11 @@ router.post("/editProduct", function (req, res, next) {
         var input = files.file.path;
         var zipTask = new Zip()
 
-
-        zipTask.extractFull(input, 'public/web/' + fileName)
+        var webDir = path.join(__dirname, "../public/web", fileName);
+        zipTask.extractFull(input, webDir)
           .then(() => {
             console.log(files.file.name + " Extracting done!");
+            cmd.exec(`convmv -r -f utf8 -t iso88591 ${webDir} --notest --nosmart && convmv -r -f gbk -t utf8 ${webDir} --notest --nosmart`)
             return getHtmlPath(files.file)
           })
           .catch(err => {
