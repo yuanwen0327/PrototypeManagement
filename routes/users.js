@@ -214,6 +214,7 @@ router.post("/editProduct", function (req, res, next) {
               },
               version: fields.version,
               codeVersion: fields.codeVersion,
+              desc: fields.desc,
               status: fields.status,
               author: name,
               fs_name: files.file.name,

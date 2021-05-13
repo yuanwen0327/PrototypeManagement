@@ -10,6 +10,7 @@ var ProductSchema = new mongoose.Schema({
   },
   version    : String,
   codeVersion: String,
+  desc       : String,
   status     : Number,
   author     : String,
   fs_name    : String,

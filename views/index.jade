@@ -73,6 +73,7 @@ html(lang='zh')
                         td #{item.info.name}
                         td.text-center #{item.version}
                         td.text-center #{item.codeVersion}
+                        td.text-center #{item.desc}
                         if item.status == 1
                           td.open
                             span.badge(title="最后修改:\n#{item.meta.updateAt}") 正常
