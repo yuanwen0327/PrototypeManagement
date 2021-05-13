@@ -220,11 +220,12 @@ $(document).ready(function () {
       uploader.options.formData.infoName = $('select[name=productList]').find('option[value=' + infoId + ']').text(),
       uploader.options.formData.version = $('input[name=productVersion]').val(),
       uploader.options.formData.codeVersion = $('input[name=productCodeVersion]').val(),
-      uploader.options.formData.desc = $('input[name=productDesc]').val(),
+      uploader.options.formData.desc = $('textarea[name=productDesc]').val(),
       uploader.options.formData.status = $('input[name=productStatus]:checked').val() || 1;
     if (!confirm('是否选择\n【' + $('select[name=productList]').find('option[value=' + infoId + ']').text() + '】?')) {
       return false;
     }
+    // debugger
     uploader.upload();
     //- var id = $('input[name=productId]').val(),
     //-     infoId = $('select[name=productList]').val(),
